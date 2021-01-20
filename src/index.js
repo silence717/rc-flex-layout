@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
+import { HView, VView } from './view';
 
-export default class Layout extends Component {
-
-    render() {
-        return(
-            <h2>这里是布局组件</h2>
-        )
-    }
+export {
+    HView,
+    VView
 }
