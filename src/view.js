@@ -24,7 +24,7 @@ export const HView = props => {
     const { className, children, ...rest } = props;
     const styles = resolveStyle(rest);
 
-    return <div data-layout-hgroup className={className} style={styles}>{ children }</div>;
+    return <div data-rc-hview className={className} style={styles}>{ children }</div>;
 }
 
 export const VView = props => {
@@ -32,7 +32,7 @@ export const VView = props => {
     const { className, children, ...rest } = props;
     const styles = resolveStyle(rest);
 
-    return <div data-layout-vgroup className={className} style={styles}>{ children }</div>;
+    return <div data-rc-vview className={className} style={styles}>{ children }</div>;
 
 };
 
