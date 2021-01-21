@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const { mode } = require('yargs').argv;
 const resolve = dir => path.resolve(__dirname, dir);
@@ -20,19 +21,17 @@ module.exports = {
         extensions: ['.js']
     },
     externals: mode === 'development' ? {} : {
-        externals: {
-            react: {
-                root: 'React',
-                commonjs2: 'react',
-                commonjs: 'react',
-                amd: 'react'
-            },
-            'react-dom': {
-                root: 'ReactDOM',
-                commonjs2: 'react-dom',
-                commonjs: 'react-dom',
-                amd: 'react-dom'
-            }
+        react: {
+            root: 'React',
+            commonjs2: 'react',
+            commonjs: 'react',
+            amd: 'react'
+        },
+        'react-dom': {
+            root: 'ReactDOM',
+            commonjs2: 'react-dom',
+            commonjs: 'react-dom',
+            amd: 'react-dom'
         }
     },
     module: {
@@ -52,6 +51,7 @@ module.exports = {
             template: 'public/index.html'
         })
     ] : [
+        // new WebpackBundleAnalyzer(),
         new CleanWebpackPlugin({
             dry: true
         }),
