@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const { mode } = require('yargs').argv;
 const resolve = dir => path.resolve(__dirname, dir);
@@ -38,5 +39,15 @@ module.exports = {
             filename: 'index.html',
             template: 'public/index.html'
         })
-    ] : []
+    ] : [
+        new CleanWebpackPlugin({
+            dry: true
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: path.join(__dirname, './package.json')},
+              { from: path.join(__dirname, './README.md')}
+            ]
+        })
+    ]
 };

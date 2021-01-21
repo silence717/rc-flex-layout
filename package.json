@@ -1,14 +1,15 @@
 {
   "name": "rc-flex-layout",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "https://github.com/silence717/rc-flex-layout.git",
   "author": "fang.yang <yangfang2028@126.com>",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --open --mode development",
+    "build": "webpack --mode production",
     "version": "npm run build && npm publish dist",
-    "build": "webpack --mode production"
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -22,6 +23,7 @@
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
     "html-webpack-plugin": "^4.5.1",
     "react-is": "^17.0.1",
     "terser-webpack-plugin": "^5.1.1",
