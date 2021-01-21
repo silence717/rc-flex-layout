@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
-import { HView, VView } from '../src/index';
+import { HView, VView } from '../dist/index';
 
 export default class Demo extends PureComponent {
     render() {

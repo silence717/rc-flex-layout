@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { mainAxis, crossAxis, defaultProps, resolveStyle } from './utils';
 
-const VGroup = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-`;
+const defaultStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+}
 
 export default function VView(props) {
 
     const { className, children, ...rest } = props;
-    const styles = resolveStyle(rest);
+    const styles = resolveStyle(defaultStyle, rest);
 
-    return <VGroup className={className} style={styles}>{ children }</VGroup>;
+    return <div className={className} style={styles}>{ children }</div>;
 };
 
 

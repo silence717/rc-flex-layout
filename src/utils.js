@@ -40,11 +40,11 @@ export const defaultProps = {
     bgColor: PropTypes.string
 };
 
-export function resolveStyle(props) {
+export function resolveStyle(defaultStyle, props) {
 
     const { width, height, gap, flex, hAlign, vAlign, padding, overflow, bgColor } = props;
 
-    return Object.assign({}, {
+    return Object.assign({}, defaultStyle, {
         width: isNaN(width) ? width : `${width}px`,
         height: isNaN(height) ? height : `${height}px`,
         justifyContent: hAlign,

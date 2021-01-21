@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { mainAxis, crossAxis, defaultProps, resolveStyle } from './utils';
 
-const HGroup = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-`;
+const defaultStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+}
 
 export default function HView(props) {
 
     const { className, children, ...rest } = props;
-    const styles = resolveStyle(rest);
+    const styles = resolveStyle(defaultStyle, rest);
 
-    return <HGroup className={className} style={styles}>{children}</HGroup>
+    return <div className={className} style={styles}>{children}</div>
 }
 
 HView.propTypes = {

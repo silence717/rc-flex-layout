@@ -15,6 +15,14 @@ module.exports = {
     output: {
         filename: 'index.js',
         path: buildOutputDir,
+        library: 'RcFlexLayout',
+		libraryTarget: 'umd',
+        auxiliaryComment: {
+			root: 'RcFlexLayout',
+			commonjs: 'rc-flex-layout',
+			commonjs2: 'rc-flex-layout',
+			amd: 'rc-flex-layout'
+		}
     },
     resolve: {
         modules: [resolve(__dirname, './src'), resolve('./node_modules')],
