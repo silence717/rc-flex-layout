@@ -15,7 +15,6 @@ export default function VView(props) {
     const styles = resolveStyle(defaultStyle, rest);
     const otherProps = omit(rest, ['width', 'height', 'gap', 'padding', 'flex', 'overflow', 'bgColor', 'hAlign', 'vAlign']);
 
-
     return <div className={className} style={styles} {...otherProps}>{ children }</div>;
 };
 
