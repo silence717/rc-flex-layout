@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { mainAxis, crossAxis, defaultProps, resolveStyle } from './utils';
+import { mainAxis, crossAxis, defaultProps, resolveStyle, omit } from './utils';
 
 const defaultStyle = {
     display: 'flex',
@@ -13,8 +13,10 @@ export default function VView(props) {
 
     const { className, children, ...rest } = props;
     const styles = resolveStyle(defaultStyle, rest);
+    const otherProps = omit(rest, ['width', 'height', 'gap', 'padding', 'flex', 'overflow', 'bgColor', 'hAlign', 'vAlign']);
 
-    return <div className={className} style={styles}>{ children }</div>;
+
+    return <div className={className} style={styles} {...otherProps}>{ children }</div>;
 };
 
 
