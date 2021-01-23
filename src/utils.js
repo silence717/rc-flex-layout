@@ -40,21 +40,21 @@ export const defaultProps = {
     bgColor: PropTypes.string
 };
 
-export function resolveStyle(defaultStyle, props) {
+export function resolveStyle(defaultStyle, props, customStyle, isHorizontal) {
 
     const { width, height, gap, flex, hAlign, vAlign, padding, overflow, bgColor } = props;
 
     return Object.assign({}, defaultStyle, {
         width: isNaN(width) ? width : `${width}px`,
         height: isNaN(height) ? height : `${height}px`,
-        justifyContent: hAlign,
-        alignItems: vAlign,
+        justifyContent: isHorizontal ? (hAlign || 'flex-start') : (vAlign || 'flex-start'),
+        alignItems: isHorizontal ? (vAlign || 'center') : (hAlign || 'center'),
         gap,
         flex,
         overflow,
         padding: isNaN(padding) ? padding : `${padding}px`,
         background: bgColor
-    });
+    }, customStyle);
 }
 
 
