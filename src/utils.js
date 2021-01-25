@@ -48,7 +48,7 @@ export function resolveStyle(defaultStyle, props, customStyle, isHorizontal) {
         width: isNaN(width) ? width : `${width}px`,
         height: isNaN(height) ? height : `${height}px`,
         justifyContent: isHorizontal ? (hAlign || 'flex-start') : (vAlign || 'flex-start'),
-        alignItems: isHorizontal ? (vAlign || 'center') : (hAlign || 'center'),
+        alignItems: isHorizontal ? (vAlign || 'center') : (hAlign || 'flex-start'),
         gap,
         flex,
         overflow,
