@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -30,8 +30,5 @@
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2",
     "yargs": "^16.2.0"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
   }
 }
